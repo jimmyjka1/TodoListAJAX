@@ -1,0 +1,18 @@
+* {
+    /* outline: 1px solid black; */
+}
+
+.item {
+    background-color: rgba(192, 171, 171, 0.534);
+    border-radius: 5px;
+    border-width: 2px !important;
+    transition: box-shadow 0.5s;
+}
+
+.item:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
