@@ -127,9 +127,8 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
     <script>
-
         $(document).ready(function() {
-            function taskCompelte(){
+            function taskCompelte() {
                 $parent = $(this).parent().parent();
                 // console.log($parent.hasClass("border-success"));
                 if ($parent.hasClass("border-success")) {
@@ -181,9 +180,8 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 }
             }
 
-            $(".complete").click(taskCompelte);
 
-            $(".editButton").click(function() {
+            function editTask() {
                 var id = $(this).parent().parent().attr("id");
                 var id = id.substring(4);
                 var title = $("#item" + id + " h3").text();
@@ -210,9 +208,10 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         }
                     });
                 });
-            });
+            }
 
-            $(".deleteButton").click(function() {
+
+            function deleteTask() {
                 var id = $(this).parent().parent().attr("id");
                 // alert user 
                 var r = confirm("Are you sure you want to delete this item?");
@@ -232,7 +231,14 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         }
                     });
                 }
-            });
+            }
+
+            $(".complete").click(taskCompelte);
+
+            $(".editButton").click(editTask);
+
+            $(".deleteButton").click(deleteTask);
+
 
             $("#createSubmit").click(function() {
                 var data = {
@@ -252,11 +258,13 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         // append new item to list
                         $("#list").append(response);
                         $(".complete").click(taskCompelte);
+                        $(".editButton").click(editTask);
+                        $(".deleteButton").click(deleteTask);
                     }
                 });
             });
 
-            
+
         });
     </script>
 </body>

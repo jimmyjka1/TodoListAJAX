@@ -1,7 +1,7 @@
 <?php
 
     $host = 'localhost';
-    $port = 3306;
+    $port = 3308;
     $dbname = 'todolist';
     $username = 'user1';
     $password = 'password1';
