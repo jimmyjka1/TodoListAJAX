@@ -8,7 +8,7 @@
         $sql = "UPDATE todo SET title = '$title', description = '$description' WHERE id = $id";
         $result = $pdo -> query($sql) -> execute();
         if ($result) {
-            echo "success";
+            header("Location: main.php");
         } else {
             echo "fail";
         }
